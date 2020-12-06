@@ -1,52 +1,79 @@
-const inquirer = require('inquirer')
-const fs = require('fs');
-
-
-const fileName = 'README2.md'
+// Requiring dependencies 
+const questions = require('inquirer');
+const fs = require('fs')
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // array of questions for user
-const questions = inquirer
-    .prompt([
-        { // title 
-            type: 'input',
-            message: "What is your project's title?",
-            name: 'title'
-        },
-        { // description
-            type: 'input',
-            message: "Enter a description, installation instructions, usage information, contribution guidelines, and test instructions",
-            name: 'description'
-        },
-        { // licenses/bqdge
-            type: 'checkbox',
-            message: "Licenses?",
-            name: 'license',
-            choices: ["hi", "bye"]
-        },
-        { // github username
-            type: 'input',
-            message: "Github username?",
-            name: 'git-username'
-        },
-        {
-            type: 'input',
-            message: "Email Address?",
-            name: 'email'
-        },
-    ]);
-
-
 
 
 // function to write README file
 function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, err => {
+    if (err) {
+      return console.log(err);
+    }
 
-    fs.writeFile(fileName, `${questions}`, function () {
-        console.log('complete');
-    })
-};
+    console.log("Success! Your README.md file has been made")
+  });
+}
+
+
 // function to initialize program
 function init() {
+  questions
+    .prompt([
+      {
+        type: 'input',
+        message: 'What is the title of your project?',
+        name: 'title',
+      },
+      {
+        type: 'input',
+        message: 'What is your Github User-Name?',
+        name: 'userName',
+      },
+      {
+        type: 'input',
+        message: 'Contact information: email?',
+        name: 'email',
+      },
+      {
+        type: 'input',
+        message: 'Description of project? ',
+        name: 'description',
+      },
+      {
+        type: 'input',
+        message: 'What are the uses for your project? ',
+        name: 'uses',
+      },
+      {
+        type: 'input',
+        message: 'Steps for installation?',
+        name: 'installationSteps',
+      },
+      {
+        type: 'list',
+        message: "Please choose the license that you used for your project.",
+        choices: ['Apache', 'Boost', 'BSD', 'Creative Commons', 'Eclipse', 'GNU', 'IBM', 'ISC', 'MIT', 'Mozilla', 'Perl', 'SIL'],
+        name: 'licenses'
+      },
+      {
+        type: 'input',
+        message: 'Any contributors?',
+        name: 'contributors',
+      },
+      {
+        type: 'input',
+        message: 'What tests have been run on this project?',
+        name: 'tests',
+      }
+    ])
+    .then((res) => {
+
+      const markdown = generateMarkdown(res);
+      writeToFile("README.md", markdown)
+    })
 
 }
 
