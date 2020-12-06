@@ -1,59 +1,53 @@
 # ReadMeGenerator
-   
-  ## Description
 
-  This project is a node JS README generator. It creates READMEs whenever you need them for new projects or for updates to old projects. It completes some of the formatting and makes everything look nice and Uniform
+## Description
 
+This project is a node.js README generator. It creates a readme markdown file whenever you need them for new projects or for updates to older projects. It completes some of the formatting and makes everything look nice and uniform. Excellent for a quick and easy, readily usuable readme file
 
-  ## Table of Contents
-  
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [Contributing](#contributing)
-  * [Tests](#tests)
-  * [License](#license)
-  
+## Table of Contents
 
-  ## Usage
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [License](#license)
 
-  If you  need a quick and easy way to make a README file, this should be your go to.
+## Usage
 
-  ## Installation
-  
-  -Instructions
-  
-  -Fork the code to your repository and pull to your local computer. 
+If you need a quick and easy way to make a README file, this should be your go to.
 
-  -After you open a fresh terminal to the file that contains the index.js file 
+## Installation
 
-  -Run NPM i in order to download the correct NPM packages. 
+-Instructions
 
-  -Then all you have to do is run "node index.js" and you will be      prompted a series of questions.
+-git clone the respository to your computer
 
-  ## GitHub Repository Link
+-open your terminal in an ide of your choice
 
-  -https://github.com/SimplyyRalph/CommandHack
+-Run NPM i in order to download all the dependencies.
 
-  ## Contributors
-  
-  -Ralph Almonor
-  
-  ## Tests
+-Then all you have to do is run "node index.js" and you will be prompted a series of questions.
 
-  -Here is a description of tests that were completed on this project before release.
-  -I ran a regression test on this initial project
-  
-  ## License Used in this project
-  
-  -ISC
-  -MIT
+## GitHub Repository Link
 
-  ## Questions
+-https://github.com/SimplyyRalph/CommandHack
 
-  *If you have any questions:
+## Contributors
+
+-Ralph Almonor
+
+## Tests
+
+- I used it to make a readme file
+
+## License Used in this project
+
+-ISC
+-MIT
+
+## Questions
+
+\*If you have any questions:
 
      -https://github.com/SimplyyRalph
      -Email : Ralphalmonor4@gmail.com
-om/SimplyyRalph
-     -Email : Ralphalmonor4@gmail.com
-
